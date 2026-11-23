@@ -28,6 +28,15 @@ Genre receives 2 points, more than mood or energy similarity, so a genre match c
 
 I ran the CLI on four profiles: Happy Pop, Chill Lofi, Intense Rock, and a high-energy profile with a calm mood. I checked whether top tracks and their explanations reflected the inputs. Chill Lofi returned the two lofi/chill tracks at the top, while Intense Rock put *Storm Runner* first. I also compared the default scoring with a weight-shift experiment that halved genre weight and doubled energy similarity; for Happy Pop, *Rooftop Lights* moved above *Gym Hero*. This shows how the ranking changes when energy matters more, without proving that the altered ranking is better for every listener.
 
+## Profile Comparisons
+
+- **Happy Pop vs. Chill Lofi:** Happy Pop ranks *Sunrise City* first because genre, mood, energy, and acoustic preference align. Chill Lofi ranks *Library Rain* first, with *Midnight Coding* close behind; low-energy lofi/chill tracks fit this profile.
+- **Happy Pop vs. Intense Rock:** The Happy Pop profile favors the happy pop track *Sunrise City*. Intense Rock puts *Storm Runner* first because both its rock genre and intense mood match, with high energy adding to the score.
+- **Happy Pop vs. High-Energy Calm Mood:** The edge case puts *Spacewalk Thoughts* first because its ambient genre and chill mood match, even though its low energy is far from the high-energy target. This shows that the category bonuses outweigh the energy mismatch here.
+- **Chill Lofi vs. Intense Rock:** Chill Lofi favors quiet, acoustic tracks, while Intense Rock favors high-energy intense tracks such as *Storm Runner*. Their opposite energy targets produce clearly different top results.
+- **Chill Lofi vs. High-Energy Calm Mood:** Both profiles reward chill, acoustic songs. The edge case ranks *Spacewalk Thoughts* first because ambient matches its genre preference, despite the high-energy target; Chill Lofi instead prefers *Library Rain* and *Midnight Coding*.
+- **Intense Rock vs. High-Energy Calm Mood:** Both profiles target high energy, but their genre and mood preferences differ. Intense Rock ranks *Storm Runner* first; the edge case ranks *Spacewalk Thoughts* first because exact ambient and chill matches contribute more than energy similarity.
+
 ## 8. Future Work
 
 - Add a diversity rule to reduce repeated artists or genres in the top results.
