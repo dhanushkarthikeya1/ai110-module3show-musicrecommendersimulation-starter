@@ -34,7 +34,7 @@ The project uses Python's standard library for its recommender and CSV loader.
 
 ## Sample Recommendation Output
 
-Output from the Happy Pop profile:
+The following is the CLI output for all four profiles, including the edge case:
 
 ```text
 Loaded songs: 18
@@ -51,6 +51,45 @@ Top recommendations:
      Because: energy similarity (+0.96); acoustic preference match (+0.50)
   5. Night Drive Loop — Neon Echo | 1.45
      Because: energy similarity (+0.95); acoustic preference match (+0.50)
+
+Chill Lofi: {'genre': 'lofi', 'mood': 'chill', 'energy': 0.35, 'likes_acoustic': True}
+Top recommendations:
+  1. Library Rain — Paper Lanterns | 4.50
+     Because: genre match (+2.00); mood match (+1.00); energy similarity (+1.00); acoustic preference match (+0.50)
+  2. Midnight Coding — LoRoom | 4.43
+     Because: genre match (+2.00); mood match (+1.00); energy similarity (+0.93); acoustic preference match (+0.50)
+  3. Focus Flow — LoRoom | 3.45
+     Because: genre match (+2.00); energy similarity (+0.95); acoustic preference match (+0.50)
+  4. Sunday Window — Marina Vale | 2.45
+     Because: mood match (+1.00); energy similarity (+0.95); acoustic preference match (+0.50)
+  5. Spacewalk Thoughts — Orbit Bloom | 2.43
+     Because: mood match (+1.00); energy similarity (+0.93); acoustic preference match (+0.50)
+
+Intense Rock: {'genre': 'rock', 'mood': 'intense', 'energy': 0.9, 'likes_acoustic': False}
+Top recommendations:
+  1. Storm Runner — Voltline | 4.49
+     Because: genre match (+2.00); mood match (+1.00); energy similarity (+0.99); acoustic preference match (+0.50)
+  2. Gym Hero — Max Pulse | 2.47
+     Because: mood match (+1.00); energy similarity (+0.97); acoustic preference match (+0.50)
+  3. Heavy Weather — Black Static | 2.44
+     Because: mood match (+1.00); energy similarity (+0.94); acoustic preference match (+0.50)
+  4. Neon Heartbeat — Glass Arcade | 1.48
+     Because: energy similarity (+0.98); acoustic preference match (+0.50)
+  5. Golden Hour Run — Daylight Club | 1.44
+     Because: energy similarity (+0.94); acoustic preference match (+0.50)
+
+High-Energy Calm Mood (edge case): {'genre': 'ambient', 'mood': 'chill', 'energy': 0.9, 'likes_acoustic': True}
+Top recommendations:
+  1. Spacewalk Thoughts — Orbit Bloom | 3.88
+     Because: genre match (+2.00); mood match (+1.00); energy similarity (+0.38); acoustic preference match (+0.50)
+  2. Midnight Coding — LoRoom | 2.02
+     Because: mood match (+1.00); energy similarity (+0.52); acoustic preference match (+0.50)
+  3. Library Rain — Paper Lanterns | 1.95
+     Because: mood match (+1.00); energy similarity (+0.45); acoustic preference match (+0.50)
+  4. Sunday Window — Marina Vale | 1.90
+     Because: mood match (+1.00); energy similarity (+0.40); acoustic preference match (+0.50)
+  5. Focus Flow — LoRoom | 1.00
+     Because: energy similarity (+0.50); acoustic preference match (+0.50)
 ```
 
 ## Profiles and Evaluation
